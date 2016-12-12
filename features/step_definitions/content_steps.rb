@@ -1,7 +1,3 @@
-Then(/^I should see 'A breaking news item'$/) do
-  pending
-end
-
-And(/^I should see 'Some really breaking action'$/) do
+Then(/^I should see "([^"]*)"$/) do |arg|
   pending
 end

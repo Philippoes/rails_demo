@@ -5,5 +5,5 @@ Feature: List articles on landing page
 
   Scenario: Viewing list of articles on application's landing page
     When I am on the landing page
-    Then I should see 'A breaking news item'
-    And I should see 'Some really breaking action'
+    Then I should see "A breaking news item"
+    And I should see "Some really breaking action"
