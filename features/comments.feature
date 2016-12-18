@@ -11,4 +11,4 @@ Feature: Visitors can comment on published articles
 
   Scenario: Visitors comments an article.
     When I fill in "Comment" with "Awesome Article!"
-    And I click "Add comment"
+    And I click "Post"
