@@ -7,7 +7,6 @@ Feature: Visitors can comment on published articles
     Given the following articles exists
   | title                | content                            | author | comment  |
   | Learn Rails 5        | Build awesome rails applications   | Amber  | Awesome! |
-    And I am on the landing page
 
   Scenario: Visitors comments an article.
     When I am on the landing page
