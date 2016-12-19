@@ -7,13 +7,17 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to have_db_column :author }
   end
 
-  describe 'Validations' do
+  describe "Associations" do
+    it { is_expected.to belong_to :article}
+  end
+
+  describe "Validations" do
     it { is_expected.to validate_presence_of :content }
     it { is_expected.to validate_presence_of :author }
   end
 
-  describe 'Factory' do
-    it 'should have valid Factory' do
+  describe "Factory" do
+    it "should have valid Factory" do
       expect(FactoryGirl.create(:comment)).to be_valid
     end
   end
