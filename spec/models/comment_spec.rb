@@ -17,9 +17,9 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to validate_presence_of :article }
   end
 
-  describe "Factory" do
-    it "should have valid Factory" do
-      expect(FactoryGirl.create(:comment)).to be_valid
-    end
-  end
+  # describe "Factory" do
+  #   it "should have valid Factory" do
+  #     expect(FactoryGirl.create(:comment)).to be_valid
+  #   end
+  # end
 end
