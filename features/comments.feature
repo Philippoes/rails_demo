@@ -5,11 +5,15 @@ Feature: Visitors can comment on published articles
 
   Background:
     Given the following articles exists
-  | title                | content                            | author | comment  |
-  | Learn Rails 5        | Build awesome rails applications   | Amber  | Awesome! |
+  | title                | content                            | author |
+  | Learn Rails 5        | Build awesome rails applications   | Amber  |
 
-  Scenario: Visitors comments an article.
+    And there is a comment with content "Awesome!", by "Philip" on "Learn Rails 5"
+
+  Scenario: Visitor sees a comment on an article
     When I am on the landing page
     Then I should see "Awesome!"
-    When I fill in "Comment" with "Great Article!"
-    And I click "Post"
+
+#  Scenario: Visitor comments an article.
+#    When I fill in "Comment" with "Great Article!"
+#    And I click "Post"
