@@ -14,6 +14,7 @@ Feature: Visitors can comment on published articles
     When I am on the landing page
     Then I should see "Awesome!"
 
-#  Scenario: Visitor comments an article.
-#    When I fill in "Comment" with "Great Article!"
-#    And I click "Post"
+  Scenario: Visitor comments an article.
+    When I fill in "Comment" with "Great Article!"
+    And I click "Post"
+    Then I should see "Great Article!"
