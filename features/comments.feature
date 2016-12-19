@@ -5,10 +5,12 @@ Feature: Visitors can comment on published articles
 
   Background:
     Given the following articles exists
-  | title                | content                            | author |
-  | Learn Rails 5        | Build awesome rails applications   | Amber  |
+  | title                | content                            | author | comment  |
+  | Learn Rails 5        | Build awesome rails applications   | Amber  | Awesome! |
     And I am on the landing page
 
   Scenario: Visitors comments an article.
-    When I fill in "Comment" with "Awesome Article!"
+    When I am on the landing page
+    Then I should see "Awesome!"
+    When I fill in "Comment" with "Great Article!"
     And I click "Post"
