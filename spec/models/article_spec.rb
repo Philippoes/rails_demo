@@ -9,6 +9,10 @@ RSpec.describe Article, type: :model do
     it { is_expected.to have_db_column :author }
   end
 
+  describe "Associations" do
+    it { is_expected.to have_many :comments}
+  end
+
   describe 'Validations' do
     it { is_expected.to validate_presence_of :title }
     it { is_expected.to validate_presence_of :content }
