@@ -8,7 +8,7 @@
     <%= form_tag article_comment_path, id: "article_#{article.id}" do %>
         <%= hidden_field_tag :article, article.id %>
         <%= label_tag :comment %>
-        <%= text_field_tag :comment, placeholder: "Add a comment..." %>
+        <%= text_field_tag :comment%>
         <%= submit_tag "Post", class: "button" %>
     <% end %>
 
