@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 20161219141355) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "author"
-    t.integer  "comment_id"
-    t.index ["comment_id"], name: "index_articles_on_comment_id", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -34,6 +32,5 @@ ActiveRecord::Schema.define(version: 20161219141355) do
     t.index ["article_id"], name: "index_comments_on_article_id", using: :btree
   end
 
-  add_foreign_key "articles", "comments"
   add_foreign_key "comments", "articles"
 end
