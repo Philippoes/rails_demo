@@ -16,3 +16,4 @@ Feature: Visitors can comment on published articles
     And I fill in "Comment" with "Great Article!"
     And I click "Post"
     Then I should see "Great Article!"
+    And I should see "by philip.zdb@gmail.com"
