@@ -1,20 +1,19 @@
 <ul>
 <% @articles.each do |article| %>
   <li>
-    <%= article.title %>
+    <%= article.title %> <br>
     <%= article.content %>
-    <p>Written by </p> <%= article.author %> <p> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+    <p>Written by <%= article.author %> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
     <%= form_tag article_comment_path, id: "article_#{article.id}" do %>
         <%= hidden_field_tag :article, article.id %>
-        <%= label_tag :email %>
-        <%= text_field_tag :email %>
         <%= label_tag :comment %>
         <%= text_field_tag :comment %>
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
         <%= submit_tag "Post", class: "button" %>
     <% end %>
     <% article.comments.each do |comment| %>
-        <p>by </p><%= comment.author %> <br>
-        <%= comment.content %> <br>
+        <p><%= comment.author %>: <%= comment.content %></p>
     <% end %>
   </li>
   <% end %>
