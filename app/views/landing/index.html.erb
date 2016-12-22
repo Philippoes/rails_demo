@@ -9,11 +9,12 @@
         <%= label_tag :email %>
         <%= text_field_tag :email %>
         <%= label_tag :comment %>
-        <%= text_field_tag :comment%>
+        <%= text_field_tag :comment %>
         <%= submit_tag "Post", class: "button" %>
     <% end %>
     <% article.comments.each do |comment| %>
-     <%= comment.content %> <br>
+        <p>by </p><%= comment.author %> <br>
+        <%= comment.content %> <br>
     <% end %>
   </li>
   <% end %>
