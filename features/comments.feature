@@ -17,3 +17,11 @@ Feature: Visitors can comment on published articles
     And I click "Post"
     Then I should see "Great Article!"
     And I should see "by philip.zdb@gmail.com"
+
+  Scenario: Visitor invalid email sad path
+    When I am on the landing page
+    And I focus on article "Learn Rails 5"
+    And I fill in "Email" with "philip.zdb@gmail"
+    And I fill in "Comment" with "Great Article!"
+    And I click "Post"
+    Then I should see "Invalid email"
