@@ -15,6 +15,7 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to validate_presence_of :content }
     it { is_expected.to validate_presence_of :author }
     it { is_expected.to validate_presence_of :article }
+    it { is_expected.to validate_format_of :author }
   end
 
   # describe "Factory" do
