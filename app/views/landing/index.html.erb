@@ -13,6 +13,13 @@
         <%= submit_tag "Post", class: "button" %>
     <% end %>
     <% article.comments.each do |comment| %>
+        <% if comment.errors.any? %>
+            <ul>
+              <% comment.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+        <% end %>
         <p><%= comment.author %>: <%= comment.content %></p>
     <% end %>
   </li>
