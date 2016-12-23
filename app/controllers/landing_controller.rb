@@ -5,7 +5,7 @@ class LandingController < ApplicationController
 
   def article_comment
     if validate_email == false
-
+      redirect_to root_path
     end
     else
     article = Article.find_by(id: params[:article])
@@ -14,7 +14,7 @@ class LandingController < ApplicationController
   end
 
   def validate_email
-    if params[:email] == invalid
+    if params[:email] == nil
       return false
     else
       return true
