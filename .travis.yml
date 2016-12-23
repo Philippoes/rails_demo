@@ -1,0 +1,21 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.3.1
+before_script:
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+  script:
+    - bundle exec rake ci:tests
+  services:
+    - postgresql
+  deploy:
+    provider: heroku
+    api_key:
+      secure: b9a0dcdd-73af-4fd5-b189-c7ea38bb1c29
+    app:
+      develop: newssite-rails
+    on:
+      repo: Philippoes/rails_demo
+    run:
+      - bundle exec rake db:migrate
