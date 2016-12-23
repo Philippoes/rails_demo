@@ -15,8 +15,10 @@ RSpec.describe Comment, type: :model do
     it { is_expected.to validate_presence_of :content }
     it { is_expected.to validate_presence_of :author }
     it { is_expected.to validate_presence_of :article }
-    it { is_expected.to validate_format_of :author }
+    it { should allow_value("email@address.foo").for (:author) }
+    it { should_not allow_value("email").for (:author) }
   end
+
 
   # describe "Factory" do
   #   it "should have valid Factory" do
