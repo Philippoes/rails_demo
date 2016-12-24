@@ -5,7 +5,16 @@ class LandingController < ApplicationController
 
   def article_comment
     article = Article.find_by(id: params[:article])
-    Comment.create(content: params[:comment], author: params[:email], article: article)
-    redirect_to root_path
+    kommentar = Comment.create(content: params[:comment], author: params[:email], article: article)
+    if kommentar.errors.any?
+      redirect_to root_path
+      kommentar.errors.full_messages.each do |message|
+      flash[:notice] = message
+      end
+    else
+      redirect_to root_path
+      flash[:notice] = "Comment posted!"
+    end
+    end
   end
-end
+
