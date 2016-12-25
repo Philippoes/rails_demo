@@ -14,7 +14,7 @@
         <%= submit_tag "Post", class: "button" %>
     <% end %>
     <% article.comments.each do |comment| %>
-        <p><%= comment.author %>: <%= comment.content %></p>
+        <p><%= comment.email %>: <%= comment.content %></p>
     <% end %>
   </li>
   <% end %>
