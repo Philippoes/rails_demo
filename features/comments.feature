@@ -15,8 +15,7 @@ Feature: Visitors can comment on published articles
     And I fill in "Email" with "philip.zdb@gmail.com"
     And I fill in "Comment" with "Great Article!"
     And I click "Post"
-    Then I should see "Great Article!"
-    And I should see "by philip.zdb@gmail.com"
+    Then I should see "philip.zdb@gmail.com: Great Article!"
 
   Scenario: Visitor invalid email sad path
     When I am on the landing page
@@ -24,4 +23,4 @@ Feature: Visitors can comment on published articles
     And I fill in "Email" with "philip.zdb@gmail"
     And I fill in "Comment" with "Great Article!"
     And I click "Post"
-    Then I should see "Invalid email"
+    Then I should see "Email is invalid"
