@@ -19,6 +19,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'pry'
+  gem "dynamic_form"
 end
 
 group :development do
