@@ -1,3 +1,12 @@
+<%= form_tag create_article_path do %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+    <%= label_tag :content %>
+    <%= text_field_tag :content %>
+    <%= label_tag :author %>
+    <%= text_field_tag :author %>
+    <%= submit_tag "Post Article", class: "button" %>
+<% end %>
 <p id="notice"><%= notice %></p>
 <ul>
 <% @articles.each do |article| %>
