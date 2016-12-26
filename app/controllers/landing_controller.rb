@@ -3,6 +3,9 @@ class LandingController < ApplicationController
     @articles = Article.all
   end
 
+  def create_article
+  end
+
   def article_comment
     article = Article.find_by(id: params[:article])
     kommentar = Comment.create(content: params[:comment], email: params[:email], article: article)
@@ -15,6 +18,6 @@ class LandingController < ApplicationController
       redirect_to root_path
       flash[:notice] = "Comment posted!"
     end
-    end
   end
+end
 
