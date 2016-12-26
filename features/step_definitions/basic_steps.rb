@@ -7,3 +7,7 @@ Given(/^the following articles exists$/) do |table|
     Article.create!(hash)
   end
 end
+
+Then(/^I should see a new Article with title "([^"]*)" and content "([^"]*)" and author "([^"]*)"$/) do |title, content, author|
+  expect(page).to have_content title, content, author
+end
