@@ -4,8 +4,15 @@ class LandingController < ApplicationController
   end
 
   def create_article
-    Article.create(title: params[:title], content: params[:content], author: params[:author])
+    article = Article.create(title: params[:title], content: params[:content], author: params[:author])
     redirect_to root_path
+    if article.errors.any?
+      article.errors.full_messages.each do |message|
+        flash[:notice] = message
+      end
+    else
+      flash[:notice] = "Article posted!"
+    end
   end
 
   def article_comment
