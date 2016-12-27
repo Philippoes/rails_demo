@@ -4,6 +4,8 @@ class LandingController < ApplicationController
   end
 
   def create_article
+    Article.create(title: params[:title], content: params[:content], author: params[:author])
+    redirect_to root_path
   end
 
   def article_comment

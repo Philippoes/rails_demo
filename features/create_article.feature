@@ -9,4 +9,6 @@ Feature: create article on landing page
     And I fill in "Content" with "content"
     And I fill in "Author" with "Philip"
     And I click "Post Article"
-    Then I should see a new Article with title "Incredible new article" and content "content" and author "Philip"
+    Then I should see "Incredible new article"
+    And I should see "content"
+    And I should see "by Philip at" current date
