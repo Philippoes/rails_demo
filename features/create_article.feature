@@ -12,3 +12,11 @@ Feature: create article on landing page
     Then I should see "Incredible new article"
     And I should see "content"
     And I should see "by Philip at" current date
+
+  Scenario: Visitor tries to add article without author
+    When I am on the landing page
+    And I fill in "Title" with "Incredible new article"
+    And I fill in "Content" with "content"
+    And I click "Post Article"
+    Then I should see "Author can't be blank"
+
