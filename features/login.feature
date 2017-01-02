@@ -4,8 +4,10 @@ Feature: Login to create articles
   I need them to be able to sign up
 
   Scenario: Visitor logs in and creates an article
-    When I click "Sign up"
-    And I fill in "Username" with "Philip1"
+    When I am on the landing page
+    And I click "Sign up"
+    Then I should be on the "Sign up" page
+    When I fill in "Username" with "Philip1"
     And I fill in "Email" with "Philip@philip.philip"
     And I fill in "Password" with "password"
     And I click "Create account"

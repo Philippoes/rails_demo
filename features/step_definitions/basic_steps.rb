@@ -14,3 +14,9 @@ end
 
 Then(/^I should be on the create\-article page$/) do
 end
+
+Then(/^I should be on the "([^"]*)" page$/) do |page|
+  if page == "/users/sign_in"
+    expect(page).to eq new_user_session_path
+  end
+end
