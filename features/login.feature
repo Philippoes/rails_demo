@@ -7,9 +7,9 @@ Feature: Login to create articles
     When I am on the landing page
     And I click "Sign up"
     Then I should be on the "Sign up" page
-    When I fill in "Username" with "Philip1"
-    And I fill in "Email" with "Philip@philip.philip"
+    When I fill in "Email" with "Philip@philip.philip"
     And I fill in "Password" with "password"
+    And I fill in "Password confirmation" with "password"
     And I click "Create account"
     Then I should see "Welcome bro! You have signed up successfully."
     And I should be on the create-article page
