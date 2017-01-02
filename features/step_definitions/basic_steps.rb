@@ -12,5 +12,5 @@ Then(/^I should see a new Article with title "([^"]*)" and content "([^"]*)" and
   expect(page).to have_content title, content, author
 end
 
-Then(/^I should be on create\-article page$/) do
+Then(/^I should be on the create\-article page$/) do
 end

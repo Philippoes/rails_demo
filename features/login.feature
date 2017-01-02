@@ -9,5 +9,6 @@ Feature: Login to create articles
     And I fill in "Email" with "Philip@philip.philip"
     And I fill in "Password" with "password"
     And I click "Create account"
-    Then I should be on create-article page
+    Then I should see "Welcome bro! You have signed up successfully."
+    And I should be on the create-article page
 
