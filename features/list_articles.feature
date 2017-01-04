@@ -10,7 +10,7 @@ Feature: List articles on landing page
   | Learn Rails 5        | Build awesome rails applications   | Amber  |
 
   Scenario: Viewing list of articles on application's landing page
-    When I am on the landing page
+    When I am on the "landing" page
     Then I should see "A breaking news item"
     And I should see "Some really breaking action"
     And I should see "Written by Thomas at" current date

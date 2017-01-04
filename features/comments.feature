@@ -10,7 +10,7 @@ Feature: Visitors can comment on published articles
   | Learn Rails 5        | Build awesome rails applications   | Amber  |
 
   Scenario: Visitor comments an article.
-    When I am on the landing page
+    When I am on the "landing" page
     And I focus on article "Learn Rails 5"
     And I fill in "Email" with "philip.zdb@gmail.com"
     And I fill in "Comment" with "Great Article!"
@@ -18,7 +18,7 @@ Feature: Visitors can comment on published articles
     Then I should see "philip.zdb@gmail.com: Great Article!"
 
   Scenario: Visitor invalid email sad path
-    When I am on the landing page
+    When I am on the "landing" page
     And I focus on article "Learn Rails 5"
     And I fill in "Email" with "philip.zdb@gmail"
     And I fill in "Comment" with "Great Article!"
