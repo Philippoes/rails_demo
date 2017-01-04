@@ -20,9 +20,9 @@ RSpec.describe Comment, type: :model do
   end
 
 
-  # describe "Factory" do
-  #   it "should have valid Factory" do
-  #     expect(FactoryGirl.create(:comment)).to be_valid
-  #   end
-  # end
+#   describe "Factory" do
+#     it "should have valid Factory" do
+#       expect(FactoryGirl.create(:comment)).to be_valid
+#     end
+#   end
 end
