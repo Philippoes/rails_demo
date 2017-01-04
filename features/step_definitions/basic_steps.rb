@@ -28,3 +28,9 @@ Given(/^that there is a user logged in with an email of "([^"]*)"$/) do |email|
   user = User.find_by(email: email)
   login_as(user, scope: :user)
 end
+
+When(/^I go to the "([^"]*)" page$/) do |page|
+  if page == "landing"
+    visit root_path
+  end
+end
