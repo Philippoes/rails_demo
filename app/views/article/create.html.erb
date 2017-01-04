@@ -1,0 +1,8 @@
+<h2>Add a new Article!</h2>
+<%= form_tag create_article_path do %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %><br>
+    <%= label_tag :content %>
+    <%= text_field_tag :content %><br>
+    <%= submit_tag "Post Article", class: "button" %>
+<% end %>
