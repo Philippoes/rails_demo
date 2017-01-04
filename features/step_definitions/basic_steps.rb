@@ -23,11 +23,8 @@ When(/^I am on the "([^"]*)" page$/) do |page|
   end
 end
 
-Given(/^that there is a user with an email of "([^"]*)"$/) do |email|
-  FactoryGirl.create(:user, email: email, password: "password")
-end
-
-Given(/^"([^"]*)" is logged in$/) do |email|
+Given(/^that there is a user logged in with an email of "([^"]*)"$/) do |email|
+  FactoryGirl.create(:user, email: email)
   user = User.find_by(email: email)
   login_as(user, scope: :user)
 end
