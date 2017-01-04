@@ -20,6 +20,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'pry'
   gem 'devise'
+  gem 'faker'
 end
 
 group :development do
