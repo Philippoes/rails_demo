@@ -2,7 +2,8 @@ class ArticleController < ApplicationController
   before_action :authenticate_user!
 
   def create_article
-    article = Article.create(title: params[:title], content: params[:content], author: params[:author])
+    author = User.find_by(id: current_user.id).email
+    article = Article.create(title: params[:title], content: params[:content], author: author)
     redirect_to article_create_path
     if article.errors.any?
       article.errors.full_messages.each do |message|
