@@ -1,2 +1,10 @@
-<h1>Article#create</h1>
-<p>Find me in app/views/article/create.html.erb</p>
+<h2>Add a new Article!</h2>
+<%= form_tag create_article_path do %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %><br>
+    <%= label_tag :content %>
+    <%= text_field_tag :content %><br>
+    <%= label_tag :author %>
+    <%= text_field_tag :author %><br>
+    <%= submit_tag "Post Article", class: "button" %>
+<% end %>
