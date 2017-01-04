@@ -1,4 +1,6 @@
 class ArticleController < ApplicationController
+  before_action :authenticate_user!
+
   def create_article
     article = Article.create(title: params[:title], content: params[:content], author: params[:author])
     redirect_to article_create_path
