@@ -5,9 +5,9 @@ Feature: Visitors can comment on published articles
 
   Background:
     Given the following articles exists
-  | title                | content                            | author |
-  | A breaking news item | Some really breaking action        | Thomas |
-  | Learn Rails 5        | Build awesome rails applications   | Amber  |
+  | title                | content                            | user           |
+  | A breaking news item | Some really breaking action        |     Thomas           |
+  | Learn Rails 5        | Build awesome rails applications   |        Amber        |
 
   Scenario: Visitor comments an article.
     When I am on the "landing" page
