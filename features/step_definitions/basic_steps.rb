@@ -21,6 +21,9 @@ When(/^I am on the "([^"]*)" page$/) do |page|
   if page == "article creation"
     visit article_create_path
   end
+  if page == "my articles"
+    visit user_articles_path
+  end
 end
 
 Given(/^that there is a user logged in with an email of "([^"]*)"$/) do |email|
@@ -32,5 +35,8 @@ end
 When(/^I go to the "([^"]*)" page$/) do |page|
   if page == "landing"
     visit root_path
+  end
+  if page == "my articles"
+    visit user_articles_path
   end
 end

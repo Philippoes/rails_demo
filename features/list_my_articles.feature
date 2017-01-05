@@ -13,7 +13,7 @@ Feature: View user articles
     And I fill in "Content" with "content"
     And I click "Post Article"
     Then I should see "Article posted!"
-    When I go to the "my article" page
+    When I go to the "my articles" page
     Then I should see "Incredible new article"
     And I should see "content"
     And I should see "by me at" current date
