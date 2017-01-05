@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :article do
     title "MyString"
     content "MyText"
-    author "MyAuthor"
+    user
   end
 end
