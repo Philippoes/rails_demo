@@ -4,10 +4,8 @@ Feature: Visitors can comment on published articles
   I would like to be able to comment on it
 
   Background:
-    Given the following articles exists
-  | title                | content                            | user           |
-  | A breaking news item | Some really breaking action        |     Thomas           |
-  | Learn Rails 5        | Build awesome rails applications   |        Amber        |
+    Given that there is an article with title: "A breaking news item" and content: "Some really breaking action" made by a user with email "amber@random.com"
+    And that there is an article with title: "Learn Rails 5" and content: "Build awesome rails applications" made by a user with email "thomas@random.com"
 
   Scenario: Visitor comments an article.
     When I am on the "landing" page

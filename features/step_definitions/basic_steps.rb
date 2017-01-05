@@ -1,9 +1,3 @@
-Given(/^the following articles exists$/) do |table|
-  table.hashes.each do |hash|
-    Article.create!(hash)
-  end
-end
-
 Then(/^I should see a new Article with title "([^"]*)" and content "([^"]*)" and author "([^"]*)"$/) do |title, content, author|
   expect(page).to have_content title, content, author
 end
@@ -39,4 +33,8 @@ When(/^I go to the "([^"]*)" page$/) do |page|
   if page == "my articles"
     visit user_articles_path
   end
+end
+
+Given(/^that there is an article with title: "([^"]*)" and content: "([^"]*)" made by a user with email "([^"]*)"$/) do |title, content, email|
+  Article.create(title: title, content: content, user: FactoryGirl.create(:user, email: email))
 end
