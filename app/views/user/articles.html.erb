@@ -1,2 +1,13 @@
-<h1>User#articles</h1>
-<p>Find me in app/views/user/articles.html.erb</p>
+<h2>My Articles</h2>
+<% @userArticles.each do |article| %>
+  <ul>
+    <li>
+      <%= article.title %> <br>
+      <%= article.content %>
+      <p>Written by <%= article.author %> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+      <% article.comments.each do |comment| %>
+          <p><%= comment.email %>: <%= comment.content %></p>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
