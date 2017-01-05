@@ -3,6 +3,7 @@ cache: bundler
 rvm:
   - 2.3.0
 before_script:
+  - bundle exec rails db:drop
   - bundle exec rails db:create --all
   - bundle exec rails db:migrate
 services:
