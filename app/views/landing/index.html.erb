@@ -5,7 +5,13 @@
   <li>
     <%= article.title %> <br>
     <%= article.content %>
-    <p>Written by <%= article.user.email %> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+    <% if current_user != nil %>
+        <% if article.user.email == current_user.email %>
+            <p>Written by me at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+        <% end %>
+    <% else %>
+        <p>Written by <%= article.user.email %> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+    <% end %>
     <%= form_tag article_comment_path, id: "article_#{article.id}" do %>
         <%= hidden_field_tag :article, article.id %>
         <%= label_tag :comment %>
