@@ -15,7 +15,13 @@
     <% end %>
     <%= render file:'/comment/create' %>
     <% article.comments.each do |comment| %>
-        <p><%= comment.user.email %>: <%= comment.content %></p>
+        <% if current_user != nil %>
+            <% if comment.user.email == current_user.email %>
+                <p>me: <%= comment.content %> </p>
+            <% end %>
+        <% else %>
+            <p><%= comment.user.email %>: <%= comment.content %></p>
+        <% end %>
     <% end %>
   </li>
   <% end %>
