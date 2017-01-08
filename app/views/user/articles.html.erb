@@ -6,7 +6,7 @@
       <%= article.content %>
       <p>Written by me at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
       <% article.comments.each do |comment| %>
-          <p><%= comment.email %>: <%= comment.content %></p>
+          <p><%= comment.user.email %>: <%= comment.content %></p>
       <% end %>
     </li>
     <% end %>
