@@ -38,3 +38,8 @@ end
 Given(/^that there is an article with title: "([^"]*)" and content: "([^"]*)" made by a user with email "([^"]*)"$/) do |title, content, email|
   Article.create(title: title, content: content, user: FactoryGirl.create(:user, email: email))
 end
+
+And(/^that user is logged in$/) do
+  user = User.find_by(email: "email@ranom.com")
+  login_as(user, scope: :user)
+end

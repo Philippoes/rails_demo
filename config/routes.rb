@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   post 'comment/create'
   get 'user/articles'
   get 'article/create'
+  post 'article/delete'
 
   devise_for :users
   root controller: :landing, action: :index
