@@ -17,11 +17,12 @@
     <% article.comments.each do |comment| %>
         <% if current_user != nil %>
             <% if comment.user.email == current_user.email %>
-                <p>me: <%= comment.content %> </p>
+                <% @commentauthor = "me: " %>
             <% end %>
         <% else %>
-            <p><%= comment.user.email %>: <%= comment.content %></p>
+            <% @commentauthor = "#{comment.user.email}: " %>
         <% end %>
+        <p><%= @commentauthor %><%= comment.content %></p>
     <% end %>
   </li>
   <% end %>
