@@ -15,7 +15,7 @@
     <% end %>
     <%= render file:'/comment/create' %>
     <% article.comments.each do |comment| %>
-        <p><%= comment.email %>: <%= comment.content %></p>
+        <p><%= comment.user.email %>: <%= comment.content %></p>
     <% end %>
   </li>
   <% end %>
