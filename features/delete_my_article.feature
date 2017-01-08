@@ -4,8 +4,8 @@ Feature: delete article on my article page
   I would like to have a delete button on my articles page
 
 Background:
-  Given that there is a user logged in with an email of "email@random.com"
-  And that there is an article with title: "Learn Rails 5" and content: "Build awesome rails applications" made by a user with email "email@random.com"
+  Given that there is an article with title: "Learn Rails 5" and content: "Build awesome rails applications" made by a user with email "email@random.com"
+  And that user is logged in
 
   Scenario: User deletes a post
     When I am on the "My articles" page
