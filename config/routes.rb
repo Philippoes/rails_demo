@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   devise_for :users
   root controller: :landing, action: :index
+  post :create_article, controller: :article, action: :create_article
 end
