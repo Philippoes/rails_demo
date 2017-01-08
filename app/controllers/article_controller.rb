@@ -13,4 +13,10 @@ class ArticleController < ApplicationController
       flash[:notice] = "Article posted!"
     end
   end
+
+  def delete
+    Article.destroy(params[:article])
+    flash[:notice] = "Article deleted!"
+    redirect_to user_articles_path
+  end
 end

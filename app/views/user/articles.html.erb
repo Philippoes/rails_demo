@@ -1,13 +1,18 @@
 <h2>My Articles</h2>
 <% @userArticles.each do |article| %>
-  <ul>
-    <li>
-      <%= article.title %> <br>
-      <%= article.content %>
-      <p>Written by me at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
-      <% article.comments.each do |comment| %>
-          <p><%= comment.user.email %>: <%= comment.content %></p>
+    <% @id = article.id %>
+    <ul>
+      <li>
+        <%= article.title %> <br>
+        <%= article.content %>
+        <p>Written by me at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+        <% article.comments.each do |comment| %>
+            <p><%= comment.user.email %>: <%= comment.content %></p>
+        <% end %>
+      </li>
+      <%= form_tag article_delete_path do %>
+          <%= hidden_field_tag :article, @id %>
+          <%= submit_tag "Delete article", class: "button" %>
       <% end %>
-    </li>
-    <% end %>
-  </ul>
+<% end %>
+</ul>
