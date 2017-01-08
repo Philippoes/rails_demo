@@ -19,7 +19,7 @@ Feature: create article on landing page
     And I should see "content"
     And I should see "by me at" current date
 
-  Scenario: Visitor tries to add article without author
+  Scenario: Visitor tries to add article without content
     When I am on the "article creation" page
     And I fill in "Title" with "Incredible new article"
     And I click "Post Article"

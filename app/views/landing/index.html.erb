@@ -2,6 +2,7 @@
 <h2>Latest news</h2>
 <ul>
 <% @articles.each do |article| %>
+      <% @id = article.id %>
   <li>
     <%= article.title %> <br>
     <%= article.content %>
@@ -12,16 +13,15 @@
     <% else %>
         <p>Written by <%= article.user.email %> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
     <% end %>
-    <%= form_tag article_comment_path, id: "article_#{article.id}" do %>
-        <%= hidden_field_tag :article, article.id %>
-        <%= label_tag :comment %>
-        <%= text_field_tag :comment %>
-        <%= label_tag :email %>
-        <%= text_field_tag :email %>
-        <%= submit_tag "Post", class: "button" %>
-    <% end %>
+    <%= render file:'/comment/create' %>
     <% article.comments.each do |comment| %>
-        <p><%= comment.email %>: <%= comment.content %></p>
+        <% if current_user != nil %>
+            <% if comment.user.email == current_user.email %>
+                <p>me: <%= comment.content %> </p>
+            <% end %>
+        <% else %>
+            <p><%= comment.user.email %>: <%= comment.content %></p>
+        <% end %>
     <% end %>
   </li>
   <% end %>

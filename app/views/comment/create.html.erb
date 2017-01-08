@@ -1,0 +1,6 @@
+<%= form_tag comment_create_path, id: "article_#{@id}" do %>
+    <%= hidden_field_tag :article, @id %>
+    <%= label_tag :comment %>
+    <%= text_field_tag :comment %>
+    <%= submit_tag "Post", class: "button" %>
+<% end %>
