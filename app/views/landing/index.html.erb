@@ -8,16 +8,21 @@
     <%= article.content %>
     <% if current_user != nil %>
         <% if article.user.email == current_user.email %>
-            <p>Written by me at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+            <% @articleauthor = "me" %>
+        <% else %>
+            <% @articleauthor = "#{article.user.email}: " %>
         <% end %>
     <% else %>
-        <p>Written by <%= article.user.email %> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
+        <% @articleauthor = "#{article.user.email}: " %>
     <% end %>
+    <p>Written by <%= @articleauthor %> at <%= article.created_at.strftime("%Y-%m-%d") %> </p>
     <%= render file:'/comment/create' %>
     <% article.comments.each do |comment| %>
         <% if current_user != nil %>
             <% if comment.user.email == current_user.email %>
                 <% @commentauthor = "me: " %>
+            <% else %>
+                <% @commentauthor = "#{comment.user.email}: " %>
             <% end %>
         <% else %>
             <% @commentauthor = "#{comment.user.email}: " %>
